@@ -1,0 +1,325 @@
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="wazishare.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - wazishare solution</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body style="background-color:burlywood">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%--<div style="background-color: rgb(15, 226, 247);color:black" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Default" style="margin-bottom: 5%; margin-top: 1%">
+                        <img src="Imgresource/logo.jpg" style="width:100px; height:35px"/>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <ul class="nav navbar-nav" style="color:black">
+                                <li><a runat="server" href="~/Default">Home</a></li>
+                                <li><a runat="server" href="~/Product">Products</a></li>
+                                <li><a runat="server" href="~/service">Service</a></li>
+                                <li><a runat="server" href="~/Events">Events</a></li>
+                                <li><a runat="server" href="~/About">About</a></li>
+                                <li><a runat="server" href="~/Contact">Contact</a></li>
+                             
+                    </ul>
+                        </div>
+                        <div class="col-md-1" >
+                            <div id="lgin">
+                            <a id="loginLink" runat="server" href="~/Login.aspx">Login</a>
+                                <label id="lblusername" runat="server" text=""/>
+                               
+                                <img class="img-circle" id="imgpic" runat="server" src="Imgresource/draqon.png" style="width: 40px; height: 40px; margin-right: 1%; margin-top: 10%" />
+                          
+                                 <a id="registerLink" runat="server" href="~/Register.aspx">Register</a>
+                                <a id="logoutLink" runat="server" href="~/Default.aspx">Logout</a>
+                          </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>--%>
+
+
+
+
+
+
+
+        <header ><nav class="navbar navbar-fixed-top navbar-default" style="background-color: rgb(15, 226, 247)">
+            <div class="container" >
+                <%--<div   class="collapse navbar-collapse">--%>
+                    <%--<div class="navbar-brand"> 
+                        <a href="/"><img src="Imgresource/wazi_logo.png" alt="wazishare ltd" style="max-width: 100%"></a>
+
+                    </div>--%>
+
+                    <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Default" style="margin-bottom:0%; margin-top: 1%">
+                        <img src="Imgresource/wazi_logo.png" alt="wazishare ltd">
+                    </a>
+            </div>
+                <div   class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav bold">
+                       <li><a runat="server" href="~/Default">Home</a></li>
+                            <li><a runat="server" href="~/Product">Products</a></li>
+                            <li><a runat="server" href="~/service">Service</a></li>
+                            <li><a runat="server" href="~/Events">Events</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <%--<div class="search">
+                                <form><input type="text" placeholder="Search here" name="search" autocomplete="off" id="explore-keywords" class="homesearch">
+                                    <div id="explore-keywords-dropdown">
+                                        <div class="kkdd dis-non" id="keywords-dd">
+                                            <ul id="keywords-by">
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                    <input type="submit" onclick="return false;">
+
+                                </form>
+
+                            </div>--%>
+
+                        </li>
+                        <li class="dropdown"> 
+                            <a href="javascript:void(0);" id="notificationBell" class="dropdown-toggle" data-toggle="dropdown" name="notification_bell" role="button" aria-haspopup="true" aria-expanded="false" onclick="bell_clr_change();">
+                                <i class="fa fa-bell-o bel_icon"></i> <%--<span class="notif dis-non">3</span>--%> </a>
+                            <ul id="notification_data" class="dropdown-menu dropdown-menu-right">
+                                <li><div class="notif_cone"></div><div class="notification-data">
+
+                                                                  </div></li></ul></li>
+                        <li id="loginLi">
+                            <%--<li>--%>
+                            <%--<a id="loginHide" name="login_hide" class="x-thm"  href="javascript:void(0);" onclick="signInTT('signup','email');">Login</a></li>--%>
+                        <a id="loginHide" runat="server" name="login_hide" class="x-thm"  href="Login.aspx" onclick="signInTT('signup','email');">Login</a>
+                             
+                                
+                        </li>
+                        <li>
+                            <a id="registerLink" runat="server" href="~/Register.aspx">Register</a>
+                        </li>
+                        <li>
+                            <img class="img-circle" id="imgpic" runat="server" src="Imgresource/draqon.png" style="width: 40px; height: 40px; margin: 0%" />
+                        </li>
+                        <li>
+                            <a id="logoutLink" runat="server" href="~/Default.aspx">Logout</a>
+                        </li>
+                        <li class="dropdown" id="loggedLi"> 
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li> <a href="https://odash.10times.com/addevent">Add Event</a></li>
+                                <li> <a href="https://login.10times.com/eventmarketing">Promote Event</a></li>
+                                <li> <a href="/app">Download App <i class="fa fa-apple"></i><i class="fa fa-android"></i></a></li></ul></li></ul>
+
+                </div></div></nav></header>
+
+
+
+
+        <div class="container body-content"   id="clear"  style="clear:both;color:black;text-align:left;padding-left:30px;padding-right:20px;padding-top:15px;margin-top:5px; background-color:rgb(15, 226, 247); font-size:12px;width:90%;min-height:10%;margin-left:5%;margin-right:5%">
+            <section class="content-wrapper main-content clear-fix" style="min-height:20%;padding-left:12px;padding-right:12px">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+    </div>
+               <hr />
+        <!--- Middle Contents  class="container center" -->
+       <div style="background-color:green">
+        <div class="row" style="color:black;text-align:left; font-size:16px;width:95%;margin-left:3%;margin-right:2%">
+          <center> <h4>Service Provided by wazishare Solution Limited</h4> </center><br />   
+        <div class="row">
+            <div class="col-lg-4" style="text-align:center;padding-bottom:5px">
+               <img class="img-circle" src="Imgresource/finalpngwazi.png" alt="thumb02" width="140" height="140" />
+                <h4>Airtime  Subscription</h4>
+                 <div class="jumbotron" style="padding:12px;text-align:left">
+                <h5>Airtime  Subscription Servies</h5>
+                <h6>Airtime  Subscription Servies </h6>
+                <a class="btn btn-default" href="Airtime.aspx" role="button">More Info &raquo; </a>
+               </div>
+            </div>
+
+            <div class="col-lg-4" style="text-align:center;padding-bottom:5px">
+                <img class="img-circle" src="Imgresource/finalpngwazi.png" alt="thumb02" width="140" height="140" />
+                 <h4>Payment Intergration</h4>
+                <div class="jumbotron" style="padding:12px;text-align:left">
+                  <h5>Welcome to Online Payment Intergration Service</h5>  
+                    <h6> Online Payment Intergration Service</h6>
+                <a class="btn btn-default" href="Intergration.aspx" role="button">More Info &raquo; </a>
+             </div>
+                 </div>
+            
+            <div class="col-lg-4" style="text-align:center;padding-bottom:5px">
+               <img class="img-circle" src="Imgresource/finalpngwazi.png" alt="thumb02" width="140" height="140" />
+                   <h4>ERP System</h4>
+                 <div class="jumbotron" style="padding:12px;text-align:left">
+                    <h5>welcome to ERP System </h5>
+                    <h6>Online Payment Intergration Service</h6>
+               <a class="btn btn-default" href="ERPs.aspx" role="button">More Info &raquo; </a>
+               </div>
+            </div>
+            </div>
+              </div>
+        </div>
+
+        <hr />
+
+        <div style="background-color:green">
+            
+        <div class="row" style="color:black;text-align:left;min-height:40px; font-size:16px;width:95%;margin-left:3%;margin-right:2%">
+            <h4><center>IMPORTANT LINKS </center></h4>
+    <div class="col-md-4">
+        <h4>IMPORTANT LINKS</h4>
+        
+                   <a href="default.aspx"> Home  </a><br />
+                    <a href="service.aspx">Service</a><br />
+                    <a href="Gallery.aspx"> Gallery</a><br />
+                    <a href="About.aspx"> About US </a><br />
+           
+    </div>
+     <div class="col-md-4">
+         <h4>IMPORTANT LINKS</h4>
+           
+                    <a href="default.aspx"> Home  </a><br />
+                    <a href="service.aspx">Service</a><br />
+                    <a href="Gallery.aspx"> Gallery</a><br />
+                    <a href="About.aspx"> About US </a><br />
+            
+     </div>
+             <div class="col-md-4">
+                 <h4>IMPORTANT LINKS</h4>
+                  
+                    <a href="default.aspx"> Home  </a><br />
+                    <a href="service.aspx">Service</a><br />
+                    <a href="Gallery.aspx"> Gallery</a><br />
+                    <a href="About.aspx"> About US </a><br />
+            
+     </div>
+           
+    
+</div> 
+   </div>
+        <hr />
+        
+				<%--<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/MeruUniversity/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-twitter">
+		<a href="https://twitter.com/MeruUniversity" class="icon">
+			<span>Twitter</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-google-plus">
+		<a href="https://plus.google.com/b/112362974827744636066/112362974827744636066/" class="icon">
+			<span>Google</span>
+		</a>
+	</li>
+
+</ul>	--%>
+
+
+
+
+
+
+
+
+
+
+         <div style="background-color:green;color:black">
+        <div class="row" style="color:black;text-align:center;min-height:40px;padding-bottom:20px ;font-size:16px;width:94%;margin-left:3%;margin-right:3%">
+            <h4><center>Partners</center></h4>
+    <div class="col-md-3" >
+        <h5>wazishare</h5>
+        <img src="Imgresource/finalpngwazi.png" alt="thumb02" style="width:75%; height:140px"/>
+    </div>
+     <div class="col-md-3">
+         <h5>Safaricom</h5>
+         <img src="Imgresource/finalpngwazi.png" alt="thumb02" style="width:75%; height:140px"/>
+     </div>
+      <div class="col-md-3">
+                 <h5>NHIF</h5>
+                 <img src="Imgresource/finalpngwazi.png" alt="thumb02" style="width:75%; height:140px"/>
+     </div>
+     <div class="col-md-3" >
+        <h5>dasayantist</h5>
+        <img src="Imgresource/finalpngwazi.png" alt="thumb02" style="width:75%; height:140px"/>
+    </div>
+           
+    
+</div> 
+   </div>
+
+        <hr />    
+    <footer class="navbar navbar-inverse navbar-fixed-bottom" style="min-height:40px;margin-top:5px;margin-bottom:0px" >
+         <div class="row" style="color:green;text-align:center;font-size:12px;width:100%;margin-left:0%;margin-right:0%;min-height:20px;padding-top:7px">
+    <div class="col-md-4" margin-top:5 px>
+      &copy <%: DateTime.Now.Year %>  - wazishare solution limited 
+    </div>
+    <div class="col-md-4" margin-top:5 px>
+        All Right Reserved     
+    </div>
+    <div class="col-md-4" margin-top:5 px>
+       <strong>  Designed  by  <a href="www.dasayantist.com"> daSayantist </a></strong>
+    </div>
+</div>
+    </footer>
+
+    </form>
+</body>
+</html>
