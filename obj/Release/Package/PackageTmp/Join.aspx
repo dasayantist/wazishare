@@ -22,7 +22,7 @@
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
-                    <label>DATE</label><asp:TextBox ID="tarehe"  type="date" class="form-control" runat="server"></asp:TextBox>
+                    <label>DATE</label><asp:TextBox ID="tarehe"  type="date" class="form-control" runat="server">DateTime.Now </asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label>LOCATION</label> <asp:DropDownList ID="location1"  class="form-control"  runat="server">

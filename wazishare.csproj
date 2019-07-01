@@ -199,6 +199,8 @@
     <Content Include="Imgresource\finalpngwazi.png" />
     <Content Include="Imgresource\logo.jpg" />
     <Content Include="Imgresource\New Doc 3_1.jpg" />
+    <Content Include="Imgresource\NHIF.jpg" />
+    <Content Include="Imgresource\SAFARICOM.png" />
     <Content Include="Imgresource\wazi_logo.png" />
     <Content Include="Intergration.aspx" />
     <Content Include="Join.aspx" />

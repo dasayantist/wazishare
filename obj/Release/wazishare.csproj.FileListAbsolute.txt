@@ -73,3 +73,12 @@ D:\C#\wazishare\obj\Release\wazishare.csproj.CoreCompileInputs.cache
 D:\C#\wazishare\obj\Release\wazishare.csproj.CopyComplete
 D:\C#\wazishare\obj\Release\wazishare.dll
 D:\C#\wazishare\obj\Release\wazishare.pdb
+D:\C#\wazishare\bin\AfricasTalkingCS.dll
+D:\C#\wazishare\bin\PhoneNumbers.dll
+D:\C#\wazishare\bin\System.Net.Http.dll
+D:\C#\wazishare\bin\System.Net.Http.Formatting.dll
+D:\C#\wazishare\bin\System.Security.Cryptography.Algorithms.dll
+D:\C#\wazishare\bin\System.Security.Cryptography.Encoding.dll
+D:\C#\wazishare\bin\System.Security.Cryptography.Primitives.dll
+D:\C#\wazishare\bin\System.Security.Cryptography.X509Certificates.dll
+D:\C#\wazishare\bin\System.Net.Http.Formatting.xml
